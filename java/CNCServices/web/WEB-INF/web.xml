@@ -3,12 +3,12 @@
     <context-param>
         <description>AgentCode</description>
         <param-name>agentCode</param-name>
-        <param-value>softpin</param-value>
+        <param-value>CNCPublicAgentTest</param-value>
     </context-param>
     <context-param>
         <description>Agent Key</description>
         <param-name>agentKey</param-name>
-        <param-value>123@#$cnc</param-value>
+        <param-value>CNCPublicAgentTest678%$$#^#</param-value>
     </context-param>
     <servlet>
         <servlet-name>CNCServices</servlet-name>

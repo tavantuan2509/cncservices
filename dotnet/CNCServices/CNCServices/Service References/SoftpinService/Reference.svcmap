@@ -22,8 +22,8 @@
     <MetadataSource Address="http://testpay.pay365.vn/Softpin.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Softpin1.disco" MetadataType="Disco" ID="20899fdc-5d2e-4161-8355-f9c3a5c14122" SourceId="1" SourceUrl="http://testpay.pay365.vn/Softpin.asmx?disco" />
-    <MetadataFile FileName="Softpin1.wsdl" MetadataType="Wsdl" ID="deaf8ccc-580d-4acb-8ddb-07a0dc1b5d1c" SourceId="1" SourceUrl="http://testpay.pay365.vn/Softpin.asmx?wsdl" />
+    <MetadataFile FileName="Softpin1.disco" MetadataType="Disco" ID="8ea02434-09ce-4e27-b77a-163b41e424b1" SourceId="1" SourceUrl="http://testpay.pay365.vn/Softpin.asmx?disco" />
+    <MetadataFile FileName="Softpin1.wsdl" MetadataType="Wsdl" ID="deb619ed-53d8-4536-bd56-664439cf582b" SourceId="1" SourceUrl="http://testpay.pay365.vn/Softpin.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

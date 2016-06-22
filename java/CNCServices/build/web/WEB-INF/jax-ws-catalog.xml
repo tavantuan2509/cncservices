@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://testpay.pay365.vn/Softpin.asmx?WSDL" uri="wsdl/testpay.pay365.vn/Softpin.asmx.wsdl"/>
-</catalog>

@@ -1,4 +1,4 @@
-# cnccallapi
+# cnccallapi Demo call CNC API with(Java, CSharp and PHP)
 
 Service API Test URL:
 
@@ -15,3 +15,7 @@ Dot Net
 
 	-	MVC4	
 	-	.Net Framework 4.5
+
+PHP	(not implement)
+
+	-	PHP version 5.5.35
