@@ -185,12 +185,10 @@ class CNCApi {
             }
             $json = utf8_decode($result);
             $data = json_decode($json, true);
-            $ccResponse->set($data);
+            $ccResponse->set($data);            
             if ($ccResponse->getCode() == 1) {
                 $listResult = Util::Decrypt($txtAgentKey, $ccResponse->getListprovider());
-                $ccResponse->setListprovider($listResult);
-                $dataTmp = json_decode($listResult, true);
-                $ccResponse->set($dataTmp);
+                $ccResponse->setListprovider($listResult);                
             } else {
                 $ccResponse->setListprovider("");
             }

@@ -130,7 +130,12 @@ namespace CNCServices
                 ccResponse = JsonConvert.DeserializeObject<CheckCountResponse>(result);
                 string listProvider = ccResponse.listprovider == null ? "" : ccResponse.listprovider;
                 //ccResponse.listprovider = ccResponse.code == 1 ? (Util.Decrypt(txtAgentKey, listProvider)) : string.Empty;
-                lblResult.Text = ccResponse.code == 1 ? (Util.Decrypt(txtAgentKey, listProvider)) : (ccResponse.toString());
+                if (ccResponse.code == 1)
+                {
+                    ccResponse.listprovider = Util.Decrypt(txtAgentKey, listProvider);                    
+                }
+                lblResult.Text = ccResponse.toString();
+                
             }
             catch (Exception ex)
             {
