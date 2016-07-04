@@ -122,7 +122,7 @@ public class CNCServices extends HttpServlet {
         String txtAgentCode = request.getServletContext().getInitParameter("agentCode");
         String txtAgentKey = request.getServletContext().getInitParameter("agentKey");
         String tranidRequest = "2016062711420056";
-        TopupRequest tr = new TopupRequest(txtAgentCode, "VT", tranidRequest, "0902183903", 10000);
+        TopupRequest tr = new TopupRequest(txtAgentCode, "VT", tranidRequest, "0902183903", 10000, "VTT");
         String trString = tr.toString();
         ResponseTopup rt = new ResponseTopup();
         try {

@@ -9,8 +9,10 @@
  */
 class Util {
 
-    public static $agentCode = "CNCPublicAgentTest";
-    public static $agentKey = "CNCPublicAgentTest678%$$#^#";
+//    public static $agentCode = "CNCPublicAgentTest";
+//    public static $agentKey = "CNCPublicAgentTest678%$$#^#";
+    public static $agentCode = "softpintest";
+    public static $agentKey = "softpintest@test123!@#";
     public static $cncServiceUrl = "http://testpay.pay365.vn/Softpin.asmx?WSDL";    
 
     /* Encrypt Fucntion */

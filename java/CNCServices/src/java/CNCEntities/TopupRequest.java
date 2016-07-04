@@ -40,8 +40,21 @@ public class TopupRequest extends BaseEntity {
      * Mệnh giá
      */
     private Integer amount;
+    /**
+     * Mã dịch vụ
+     */
+    private String type;
 
     public TopupRequest() {
+    }
+
+    public TopupRequest(String agentcode, String catecode, String tranid, String target, Integer amount, String type) {
+        this.agentcode = agentcode;
+        this.catecode = catecode;
+        this.tranid = tranid;
+        this.target = target;
+        this.amount = amount;
+        this.type = type;
     }
 
     public TopupRequest(String agentcode, String catecode, String tranid, String target, Integer amount) {
@@ -92,6 +105,14 @@ public class TopupRequest extends BaseEntity {
         this.amount = amount;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public JSONObject getJsonEntity() {
         JSONObject jo = new JSONObject();
@@ -101,6 +122,7 @@ public class TopupRequest extends BaseEntity {
             jo.put("tranid", tranid);
             jo.put("target", target);
             jo.put("amount", amount);
+            jo.put("type", type);
         } catch (JSONException ex) {
             Logger.getLogger(TopupRequest.class.getName()).log(Level.SEVERE, null, ex);
         }

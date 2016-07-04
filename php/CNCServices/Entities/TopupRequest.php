@@ -36,18 +36,32 @@ class TopupRequest extends BaseEntity {
      */
     private $amount;
 
+    /**
+     * Mã dịch vụ
+     */
+    private $type;
+
     function __constructor() {
         
     }
 
-    public static function createAll($agentcode, $catecode, $tranid, $target, $amount) {
+    public static function createAll($agentcode, $catecode, $tranid, $target, $amount, $type) {
         $instance = new self();
         $instance->setAgentcode($agentcode);
         $instance->setAmount($amount);
         $instance->setCatecode($catecode);
         $instance->setTarget($target);
         $instance->setTranid($tranid);
+        $instance->setType($type);
         return $instance;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
     }
 
     public function getAgentcode() {

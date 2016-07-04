@@ -74,7 +74,7 @@ namespace CNCServices
             string txtAgentCode = ConfigurationManager.AppSettings["agentCode"];
             string txtAgentKey = ConfigurationManager.AppSettings["agentKey"];
             string tranidRequest = "2016062711420056";
-            TopupRequest tr = new TopupRequest { agentcode = txtAgentCode, catecode = "VT", tranid = tranidRequest, target = "0902183903", amount = 10000 };
+            TopupRequest tr = new TopupRequest { agentcode = txtAgentCode, catecode = "VT", tranid = tranidRequest, target = "0902183903", amount = 10000, type = "VTT" };
             string trString = tr.toString();
             ResponseTopup rt = new ResponseTopup();
             string result = string.Empty;
@@ -132,10 +132,10 @@ namespace CNCServices
                 //ccResponse.listprovider = ccResponse.code == 1 ? (Util.Decrypt(txtAgentKey, listProvider)) : string.Empty;
                 if (ccResponse.code == 1)
                 {
-                    ccResponse.listprovider = Util.Decrypt(txtAgentKey, listProvider);                    
+                    ccResponse.listprovider = Util.Decrypt(txtAgentKey, listProvider);
                 }
                 lblResult.Text = ccResponse.toString();
-                
+
             }
             catch (Exception ex)
             {

@@ -106,7 +106,7 @@ class CNCApi {
         $txtAgentCode = Util::$agentCode;
         $txtAgentKey = Util::$agentKey;
         $tranidRequest = "2016062711420056";
-        $tr = TopupRequest::createAll($txtAgentCode, "VT", $tranidRequest, "0902183903", 10000);
+        $tr = TopupRequest::createAll($txtAgentCode, "VT", $tranidRequest, "0902183903", 10000, "VTT");
         $trString = $tr->toJson();
         $rt = new ResponseTopup();
         try {
@@ -169,7 +169,7 @@ class CNCApi {
         $txtData = "";
         $txtAgentCode = Util::$agentCode;
         $txtAgentKey = Util::$agentKey;
-        $ccrequest = CheckCountRequest::createAll($txtAgentCode, "VT", 10000);
+        $ccrequest = CheckCountRequest::createAll($txtAgentCode, "VINA", 200000);
         $ccRequestString = $ccrequest->toJson();
         $ccResponse = new CheckCountResponse();
         try {
@@ -185,10 +185,10 @@ class CNCApi {
             }
             $json = utf8_decode($result);
             $data = json_decode($json, true);
-            $ccResponse->set($data);            
+            $ccResponse->set($data);
             if ($ccResponse->getCode() == 1) {
                 $listResult = Util::Decrypt($txtAgentKey, $ccResponse->getListprovider());
-                $ccResponse->setListprovider($listResult);                
+                $ccResponse->setListprovider($listResult);
             } else {
                 $ccResponse->setListprovider("");
             }

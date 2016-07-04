@@ -27,5 +27,9 @@ namespace CNCServices.Core.Entities
          * Mệnh giá
          */
         public Int32 amount { set; get; }
+        /**
+         * Mã dịch vụ
+         */
+        public string type { set; get; }
     }
 }
