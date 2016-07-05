@@ -2,7 +2,7 @@
 
 Service API Test URL:
 
-http://testpay.pay365.vn/Softpin.asmx
+http://testpay.pay365.vn/CardCharging.asmx
 
 
 Java 

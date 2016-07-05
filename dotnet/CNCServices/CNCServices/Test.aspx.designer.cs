@@ -22,49 +22,22 @@ namespace CNCServices {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnBuyCard control.
+        /// btnUseCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuyCard;
+        protected global::System.Web.UI.WebControls.Button btnUseCard;
         
         /// <summary>
-        /// btnGetCard control.
+        /// btnGetTransaction control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGetCard;
-        
-        /// <summary>
-        /// btnTopup control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTopup;
-        
-        /// <summary>
-        /// btnCheckTranTopup control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCheckTranTopup;
-        
-        /// <summary>
-        /// btnCheckCount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCheckCount;
+        protected global::System.Web.UI.WebControls.Button btnGetTransaction;
         
         /// <summary>
         /// lblResult control.

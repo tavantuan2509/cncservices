@@ -5,14 +5,10 @@
  */
 package CNCServicesServlet;
 
-import CNCEntities.BuyCardRequest;
-import CNCEntities.CheckCountRequest;
-import CNCEntities.CheckCountResponse;
-import CNCEntities.GetCardRequest;
-import CNCEntities.ResponseRequest;
-import CNCEntities.ResponseTopup;
-import CNCEntities.TopupRequest;
-import CNCServices.Softpin;
+import CNCEntities.GetTransactionRequest;
+import CNCEntities.ResponseUseCard;
+import CNCEntities.UseCard;
+import CNCService.Payment.CardCharging;
 import CNCUtil.Util;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,9 +32,9 @@ import org.json.JSONObject;
 public class CNCServices extends HttpServlet {
 
     /**
-     * Demo Call Buy Card Service
+     * Demo Call UseCard Service
      */
-    private String BuyCard(HttpServletRequest request) {
+    private String UseCard(HttpServletRequest request) {
         String txtData = "";
         String txtAgentCode = request.getServletContext().getInitParameter("agentCode");
         String txtAgentKey = request.getServletContext().getInitParameter("agentKey");
@@ -46,163 +42,56 @@ public class CNCServices extends HttpServlet {
         cal.add(Calendar.DATE, 7);
         Date date = cal.getTime();
         SimpleDateFormat ft = new SimpleDateFormat("YYYYMMddhhmmssss");
-        BuyCardRequest bcr = new BuyCardRequest(txtAgentCode, "VT", ft.format(date).toString(), 10000, 2);
-        String bcrString = bcr.toString();
-        ResponseRequest rr = new ResponseRequest();
+        UseCard usecard = new UseCard(txtAgentCode, "VT", ft.format(date).toString(), "cardcode", "cardserial");
+        String usecardString = usecard.toString();
+        ResponseUseCard ruc = new ResponseUseCard();
         try {
-            txtData = Util.Encrypt(txtAgentKey, bcrString);
-            Softpin soft = new Softpin();
-            String result = soft.getSoftpinSoap12().buyCard(txtAgentCode, txtData);
+            txtData = Util.Encrypt(txtAgentKey, usecardString);
+            CardCharging card = new CardCharging();
+            String result = card.getCardChargingSoap12().useCard(txtAgentCode, txtData);
             JSONObject jsonObject = new JSONObject(result);
             String msg = jsonObject.isNull("msg") ? "" : jsonObject.getString("msg");
-            rr.setMsg(msg);
+            ruc.setMsg(msg);
             String tranid = jsonObject.isNull("tranid") ? "" : jsonObject.getString("tranid");
-            rr.setTranid(tranid);
-            String listCards = jsonObject.isNull("listCards") ? "" : jsonObject.getString("listCards");
+            ruc.setTranid(tranid);
             Integer code = jsonObject.getInt("code");
-            rr.setCode(code);
-            if (code == 1) {
-                String listResult = Util.Decrypt(txtAgentKey, listCards);
-                rr.setListCards(listResult);
-                System.out.println("success");
-            } else {
-                rr.setListCards("");
-                System.out.println("Error=" + msg);
-            }
+            ruc.setCode(code);
+            Integer amount = jsonObject.getInt("amount");
+            ruc.setAmount(amount);
         } catch (Exception e) {
-            rr.setListCards("");
             System.out.println("error=" + e.getMessage());
         }
-        return rr.toString();
+        return ruc.toString();
     }
 
     /**
-     * Demo Call Get Card Service
+     * Demo Call GetTransaction Service
      */
-    private String GetCard(HttpServletRequest request) {
+    private String GetTransaction(HttpServletRequest request) {
         String txtData = "";
         String txtAgentCode = request.getServletContext().getInitParameter("agentCode");
         String txtAgentKey = request.getServletContext().getInitParameter("agentKey");
         String tranidRequest = "2016062711420056";
-        GetCardRequest gcr = new GetCardRequest(txtAgentCode, tranidRequest);
+        GetTransactionRequest gcr = new GetTransactionRequest(txtAgentCode, tranidRequest);
         String gcrString = gcr.toString();
-        ResponseRequest rr = new ResponseRequest();
+        ResponseUseCard ruc = new ResponseUseCard();
         try {
             txtData = Util.Encrypt(txtAgentKey, gcrString);
-            Softpin soft = new Softpin();
-            String result = soft.getSoftpinSoap12().getCard(txtAgentCode, txtData);
+            CardCharging card = new CardCharging();
+            String result = card.getCardChargingSoap12().getTransaction(txtAgentCode, txtData);
             JSONObject jsonObject = new JSONObject(result);
             String msg = jsonObject.isNull("msg") ? "" : jsonObject.getString("msg");
-            rr.setMsg(msg);
+            ruc.setMsg(msg);
             String tranid = jsonObject.isNull("tranid") ? "" : jsonObject.getString("tranid");
-            rr.setTranid(tranid);
-            String listCards = jsonObject.isNull("listCards") ? "" : jsonObject.getString("listCards");
+            ruc.setTranid(tranid);
             Integer code = jsonObject.getInt("code");
-            rr.setCode(code);
-            if (code == 1) {
-                String listResult = Util.Decrypt(txtAgentKey, listCards);
-                rr.setListCards(listResult);
-                System.out.println("success");
-            } else {
-                rr.setListCards("");
-                System.out.println("Error=" + msg);
-            }
-        } catch (Exception e) {
-            rr.setListCards("");
-            System.out.println("error=" + e.getMessage());
-        }
-        return rr.toString();
-    }
-
-    /**
-     * Demo Call Topup Serivce
-     */
-    private String Topup(HttpServletRequest request) {
-        String txtData = "";
-        String txtAgentCode = request.getServletContext().getInitParameter("agentCode");
-        String txtAgentKey = request.getServletContext().getInitParameter("agentKey");
-        String tranidRequest = "2016062711420056";
-        TopupRequest tr = new TopupRequest(txtAgentCode, "VT", tranidRequest, "0902183903", 10000, "VTT");
-        String trString = tr.toString();
-        ResponseTopup rt = new ResponseTopup();
-        try {
-            txtData = Util.Encrypt(txtAgentKey, trString);
-            Softpin soft = new Softpin();
-            String result = soft.getSoftpinSoap12().topup(txtAgentCode, txtData);
-            JSONObject jsonObject = new JSONObject(result);
-            String msg = jsonObject.isNull("msg") ? "" : jsonObject.getString("msg");
-            rt.setMsg(msg);
-            String tranid = jsonObject.isNull("tranid") ? "" : jsonObject.getString("tranid");
-            rt.setTranid(tranid);
-            Integer code = jsonObject.getInt("code");
-            rt.setCode(code);
+            ruc.setCode(code);
+            Integer amount = jsonObject.getInt("amount");
+            ruc.setAmount(amount);
         } catch (Exception e) {
             System.out.println("error=" + e.getMessage());
         }
-        return rt.toString();
-    }
-
-    /**
-     * Demo Call Check Transaction Topup Service
-     */
-    private String CheckTranTopup(HttpServletRequest request) {
-        String txtData = "";
-        String txtAgentCode = request.getServletContext().getInitParameter("agentCode");
-        String txtAgentKey = request.getServletContext().getInitParameter("agentKey");
-        String tranidRequest = "2016062711420056";
-        GetCardRequest gcr = new GetCardRequest(txtAgentCode, tranidRequest);
-        String gcrString = gcr.toString();
-        ResponseTopup rt = new ResponseTopup();
-        try {
-            txtData = Util.Encrypt(txtAgentKey, gcrString);
-            Softpin soft = new Softpin();
-            String result = soft.getSoftpinSoap12().checkTranTopup(txtAgentCode, txtData);
-            JSONObject jsonObject = new JSONObject(result);
-            String msg = jsonObject.isNull("msg") ? "" : jsonObject.getString("msg");
-            rt.setMsg(msg);
-            String tranid = jsonObject.isNull("tranid") ? "" : jsonObject.getString("tranid");
-            rt.setTranid(tranid);
-            Integer code = jsonObject.getInt("code");
-            rt.setCode(code);
-        } catch (Exception e) {
-            System.out.println("error=" + e.getMessage());
-        }
-        return rt.toString();
-    }
-
-    /**
-     * Demo Call Check Count Service
-     */
-    private String CheckCount(HttpServletRequest request) {
-        String txtData = "";
-        String txtAgentCode = request.getServletContext().getInitParameter("agentCode");
-        String txtAgentKey = request.getServletContext().getInitParameter("agentKey");
-        CheckCountRequest ccrequest = new CheckCountRequest(txtAgentCode, "VT", 10000);
-        String ccRequestString = ccrequest.toString();
-        CheckCountResponse ccResponse = new CheckCountResponse();
-        try {
-            txtData = Util.Encrypt(txtAgentKey, ccRequestString);
-            Softpin soft = new Softpin();
-            String result = soft.getSoftpinSoap12().checkCount(txtAgentCode, txtData);
-            JSONObject jsonObject = new JSONObject(result);
-            String msg = jsonObject.isNull("msg") ? "" : jsonObject.getString("msg");
-            ccResponse.setMsg(msg);
-            String listprovider = jsonObject.isNull("listprovider") ? "" : jsonObject.getString("listprovider");
-            Integer code = jsonObject.getInt("code");
-            ccResponse.setCode(code);
-            if (code == 1) {
-                String listResult = Util.Decrypt(txtAgentKey, listprovider);
-                ccResponse.setListprovider(listResult);
-                System.out.println("success");
-            } else {
-                ccResponse.setListprovider("");
-                System.out.println("Error=" + msg);
-            }
-        } catch (Exception e) {
-            ccResponse.setListprovider("");
-            System.out.println("error=" + e.getMessage());
-        }
-        return ccResponse.toString();
+        return ruc.toString();
     }
 
     /**
@@ -218,16 +107,10 @@ public class CNCServices extends HttpServlet {
             throws ServletException, IOException {
         String action = request.getParameter("txtAction");
         String result = "";
-        if (action.equals("BuyCard")) {
-            result = BuyCard(request);
-        } else if (action.equals("GetCard")) {
-            result = GetCard(request);
-        } else if (action.equals("Topup")) {
-            result = Topup(request);
-        } else if (action.equals("CheckTranTopup")) {
-            result = CheckTranTopup(request);
-        } else if (action.equals("CheckCount")) {
-            result = CheckCount(request);
+        if (action.equals("UseCard")) {
+            result = UseCard(request);
+        } else if (action.equals("GetTransaction")) {
+            result = GetTransaction(request);
         }
         response.setContentType("text/json;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {

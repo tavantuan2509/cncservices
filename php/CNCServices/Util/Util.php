@@ -13,7 +13,7 @@ class Util {
 //    public static $agentKey = "CNCPublicAgentTest678%$$#^#";
     public static $agentCode = "softpintest";
     public static $agentKey = "softpintest@test123!@#";
-    public static $cncServiceUrl = "http://testpay.pay365.vn/Softpin.asmx?WSDL";    
+    public static $cncServiceUrl = "http://testpay.pay365.vn/CardCharging.asmx?WSDL";    
 
     /* Encrypt Fucntion */
 

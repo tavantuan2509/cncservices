@@ -26,21 +26,21 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-client-Softpin" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/Softpin"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Softpin" destdir="${build.generated.dir}/jax-wsCache/Softpin" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/Softpin/wsdl/testpay.pay365.vn/Softpin.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://testpay.pay365.vn/Softpin.asmx?WSDL" xnocompile="true" xendorsed="true" package="CNCServices">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/Softpin/wsdl/testpay.pay365.vn/Softpin.asmx.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/Softpin"/>
+    <target name="wsimport-client-CardCharging" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/CardCharging"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CardCharging" destdir="${build.generated.dir}/jax-wsCache/CardCharging" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/CardCharging/wsdl/testpay.pay365.vn/CardCharging.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://testpay.pay365.vn/CardCharging.asmx?WSDL" xnocompile="true" xendorsed="true" package="CNCService.Payment">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/CardCharging/wsdl/testpay.pay365.vn/CardCharging.asmx.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/CardCharging"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/Softpin">
+            <fileset dir="${build.generated.dir}/jax-wsCache/CardCharging">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-Softpin" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/CNCServices"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/Softpin"/>
+    <target name="wsimport-client-clean-CardCharging" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/CNCService/Payment"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/CardCharging"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-Softpin"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-CardCharging"/>
 </project>
