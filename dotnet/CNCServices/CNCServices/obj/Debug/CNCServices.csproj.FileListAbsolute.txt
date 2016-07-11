@@ -81,6 +81,5 @@ E:\M_Works\UDIC\C_Project\C_Other\CNCAPI\dotnet\CNCServices\CNCServices\bin\DotN
 E:\M_Works\UDIC\C_Project\C_Other\CNCAPI\dotnet\CNCServices\CNCServices\bin\DotNetOpenAuth.OAuth.xml
 E:\M_Works\UDIC\C_Project\C_Other\CNCAPI\dotnet\CNCServices\CNCServices\bin\DotNetOpenAuth.OpenId.xml
 E:\M_Works\UDIC\C_Project\C_Other\CNCAPI\dotnet\CNCServices\CNCServices\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-E:\M_Works\UDIC\C_Project\C_Other\CNCAPI\dotnet\CNCServices\CNCServices\obj\Debug\CNCServices.csprojResolveAssemblyReference.cache
 E:\M_Works\UDIC\C_Project\C_Other\CNCAPI\dotnet\CNCServices\CNCServices\obj\Debug\CNCServices.dll
 E:\M_Works\UDIC\C_Project\C_Other\CNCAPI\dotnet\CNCServices\CNCServices\obj\Debug\CNCServices.pdb

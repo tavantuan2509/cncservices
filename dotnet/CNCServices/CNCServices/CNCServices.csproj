@@ -166,14 +166,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Core\Entities\BaseEntity.cs" />
-    <Compile Include="Core\Entities\BuyCardRequest.cs" />
-    <Compile Include="Core\Entities\CheckCountRequest.cs" />
-    <Compile Include="Core\Entities\CheckCountResponse.cs" />
-    <Compile Include="Core\Entities\GetCardRequest.cs" />
-    <Compile Include="Core\Entities\ResponseRequest.cs" />
-    <Compile Include="Core\Entities\ResponseRequestCheckCount.cs" />
-    <Compile Include="Core\Entities\ResponseTopup.cs" />
-    <Compile Include="Core\Entities\TopupRequest.cs" />
+    <Compile Include="Core\Entities\GetTransactionRequest.cs" />
+    <Compile Include="Core\Entities\ResponseUseCard.cs" />
+    <Compile Include="Core\Entities\UseCard.cs" />
     <Compile Include="Core\Util\Util.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -181,7 +176,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\SoftpinService\Reference.cs">
+    <Compile Include="Service References\CardCharging\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -266,34 +261,26 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Service References\SoftpinService\CNCServices.SoftpinService.BuyCardResponse.datasource">
+    <Content Include="Service References\CardCharging\CardCharging.disco" />
+    <Content Include="Service References\CardCharging\CNCServices.CardCharging.GetTransactionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\SoftpinService\CNCServices.SoftpinService.CheckCountResponse.datasource">
+    <Content Include="Service References\CardCharging\CNCServices.CardCharging.UseCardResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\SoftpinService\CNCServices.SoftpinService.CheckTranTopupResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\SoftpinService\CNCServices.SoftpinService.GetCardResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\SoftpinService\CNCServices.SoftpinService.TopupResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Service References\SoftpinService\configuration91.svcinfo" />
-    <None Include="Service References\SoftpinService\configuration.svcinfo" />
-    <None Include="Service References\SoftpinService\Reference.svcmap">
+    <Content Include="Service References\CardCharging\configuration91.svcinfo" />
+    <Content Include="Service References\CardCharging\configuration.svcinfo" />
+    <Content Include="Service References\CardCharging\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <Content Include="Service References\SoftpinService\Softpin1.disco" />
+    </Content>
     <Content Include="Test.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -330,7 +317,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Service References\SoftpinService\Softpin1.wsdl" />
+    <Content Include="Service References\CardCharging\CardCharging.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -342,7 +329,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\SoftpinService\" />
+    <WCFMetadataStorage Include="Service References\CardCharging\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
