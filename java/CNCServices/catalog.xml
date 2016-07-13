@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://testpay.pay365.vn/Softpin.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/Softpin/wsdl/testpay.pay365.vn/Softpin.asmx.wsdl"/>
+    <system systemId="http://localhost:4965/CardCharging.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/CardCharging/wsdl/localhost_4965/CardCharging.asmx.wsdl"/>
     <system systemId="http://testpay.pay365.vn/CardCharging.asmx?WSDL" uri="src/conf/xml-resources/web-service-references/CardCharging/wsdl/testpay.pay365.vn/CardCharging.asmx.wsdl"/>
 </catalog>

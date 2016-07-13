@@ -8,8 +8,8 @@ package CNCServicesServlet;
 import CNCEntities.GetTransactionRequest;
 import CNCEntities.ResponseUseCard;
 import CNCEntities.UseCard;
-import CNCService.Payment.CardCharging;
 import CNCUtil.Util;
+import CardCharging.CardCharging;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -38,11 +38,13 @@ public class CNCServices extends HttpServlet {
         String txtData = "";
         String txtAgentCode = request.getServletContext().getInitParameter("agentCode");
         String txtAgentKey = request.getServletContext().getInitParameter("agentKey");
+        String txtCardCode = request.getServletContext().getInitParameter("cardcode");
+        String txtCardSerial = request.getServletContext().getInitParameter("cardserial");
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, 7);
         Date date = cal.getTime();
         SimpleDateFormat ft = new SimpleDateFormat("YYYYMMddhhmmssss");
-        UseCard usecard = new UseCard(txtAgentCode, "VT", ft.format(date).toString(), "cardcode", "cardserial");
+        UseCard usecard = new UseCard(txtAgentCode, "VT", ft.format(date).toString(), txtCardCode, txtCardSerial);
         String usecardString = usecard.toString();
         ResponseUseCard ruc = new ResponseUseCard();
         try {

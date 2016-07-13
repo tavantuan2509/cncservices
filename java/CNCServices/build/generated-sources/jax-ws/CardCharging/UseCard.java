@@ -1,5 +1,5 @@
 
-package CNCService.Payment;
+package CardCharging;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

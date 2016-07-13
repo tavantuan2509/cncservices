@@ -1,5 +1,5 @@
 
-package CNCService.Payment;
+package CardCharging;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="UseCardResult" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="GetTransactionResult" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,36 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "useCardResult"
+    "getTransactionResult"
 })
-@XmlRootElement(name = "UseCardResponse")
-public class UseCardResponse {
+@XmlRootElement(name = "GetTransactionResponse")
+public class GetTransactionResponse {
 
-    @XmlElement(name = "UseCardResult")
-    protected String useCardResult;
+    @XmlElement(name = "GetTransactionResult")
+    protected String getTransactionResult;
 
     /**
-     * Gets the value of the useCardResult property.
+     * Gets the value of the getTransactionResult property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getUseCardResult() {
-        return useCardResult;
+    public String getGetTransactionResult() {
+        return getTransactionResult;
     }
 
     /**
-     * Sets the value of the useCardResult property.
+     * Sets the value of the getTransactionResult property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setUseCardResult(String value) {
-        this.useCardResult = value;
+    public void setGetTransactionResult(String value) {
+        this.getTransactionResult = value;
     }
 
 }

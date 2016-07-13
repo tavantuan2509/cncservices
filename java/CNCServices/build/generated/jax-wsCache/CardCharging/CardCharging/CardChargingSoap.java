@@ -1,5 +1,5 @@
 
-package CNCService.Payment;
+package CardCharging;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -32,8 +32,8 @@ public interface CardChargingSoap {
      */
     @WebMethod(operationName = "UseCard", action = "http://tempuri.org/UseCard")
     @WebResult(name = "UseCardResult", targetNamespace = "http://tempuri.org/")
-    @RequestWrapper(localName = "UseCard", targetNamespace = "http://tempuri.org/", className = "CNCService.Payment.UseCard")
-    @ResponseWrapper(localName = "UseCardResponse", targetNamespace = "http://tempuri.org/", className = "CNCService.Payment.UseCardResponse")
+    @RequestWrapper(localName = "UseCard", targetNamespace = "http://tempuri.org/", className = "CardCharging.UseCard")
+    @ResponseWrapper(localName = "UseCardResponse", targetNamespace = "http://tempuri.org/", className = "CardCharging.UseCardResponse")
     public String useCard(
         @WebParam(name = "agentCode", targetNamespace = "http://tempuri.org/")
         String agentCode,
@@ -49,8 +49,8 @@ public interface CardChargingSoap {
      */
     @WebMethod(operationName = "GetTransaction", action = "http://tempuri.org/GetTransaction")
     @WebResult(name = "GetTransactionResult", targetNamespace = "http://tempuri.org/")
-    @RequestWrapper(localName = "GetTransaction", targetNamespace = "http://tempuri.org/", className = "CNCService.Payment.GetTransaction")
-    @ResponseWrapper(localName = "GetTransactionResponse", targetNamespace = "http://tempuri.org/", className = "CNCService.Payment.GetTransactionResponse")
+    @RequestWrapper(localName = "GetTransaction", targetNamespace = "http://tempuri.org/", className = "CardCharging.GetTransaction")
+    @ResponseWrapper(localName = "GetTransactionResponse", targetNamespace = "http://tempuri.org/", className = "CardCharging.GetTransactionResponse")
     public String getTransaction(
         @WebParam(name = "agentCode", targetNamespace = "http://tempuri.org/")
         String agentCode,

@@ -28,7 +28,7 @@
     </target>
     <target name="wsimport-client-CardCharging" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/CardCharging"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CardCharging" destdir="${build.generated.dir}/jax-wsCache/CardCharging" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/CardCharging/wsdl/testpay.pay365.vn/CardCharging.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://testpay.pay365.vn/CardCharging.asmx?WSDL" xnocompile="true" xendorsed="true" package="CNCService.Payment">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CardCharging" destdir="${build.generated.dir}/jax-wsCache/CardCharging" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/CardCharging/wsdl/testpay.pay365.vn/CardCharging.asmx.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:4965/CardCharging.asmx?WSDL" xnocompile="true" xendorsed="true" package="CardCharging">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/CardCharging/wsdl/testpay.pay365.vn/CardCharging.asmx.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/CardCharging"/>
         </wsimport>
@@ -39,7 +39,7 @@
         </copy>
     </target>
     <target name="wsimport-client-clean-CardCharging" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/CNCService/Payment"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/CardCharging"/>
         <delete dir="${build.generated.dir}/jax-wsCache/CardCharging"/>
     </target>
     <target name="wsimport-client-generate" depends="wsimport-client-CardCharging"/>

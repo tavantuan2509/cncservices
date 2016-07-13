@@ -3,12 +3,22 @@
     <context-param>
         <description>AgentCode</description>
         <param-name>agentCode</param-name>
-        <param-value>CNCPublicAgentTest</param-value>
+        <param-value>dacap</param-value>
     </context-param>
     <context-param>
         <description>Agent Key</description>
         <param-name>agentKey</param-name>
-        <param-value>CNCPublicAgentTest678%$$#^#</param-value>
+        <param-value>dacap</param-value>
+    </context-param>
+    <context-param>
+        <description>CardCode</description>
+        <param-name>cardcode</param-name>
+        <param-value>BVNP99991041394</param-value>
+    </context-param>
+    <context-param>
+        <description>CardSerial</description>
+        <param-name>cardserial</param-name>
+        <param-value>BVN1041394</param-value>
     </context-param>
     <servlet>
         <servlet-name>CNCServices</servlet-name>

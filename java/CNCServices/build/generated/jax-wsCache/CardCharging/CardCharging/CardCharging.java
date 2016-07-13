@@ -1,5 +1,5 @@
 
-package CNCService.Payment;
+package CardCharging;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CardCharging", targetNamespace = "http://tempuri.org/", wsdlLocation = "http://testpay.pay365.vn/CardCharging.asmx?WSDL")
+@WebServiceClient(name = "CardCharging", targetNamespace = "http://tempuri.org/", wsdlLocation = "http://localhost:4965/CardCharging.asmx?WSDL")
 public class CardCharging
     extends Service
 {
@@ -30,7 +30,7 @@ public class CardCharging
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://testpay.pay365.vn/CardCharging.asmx?WSDL");
+            url = new URL("http://localhost:4965/CardCharging.asmx?WSDL");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
