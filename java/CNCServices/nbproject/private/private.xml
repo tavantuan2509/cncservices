@@ -2,19 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/E:/M_Works/UDIC/C_Project/C_Other/CNCAPI/java/CNCServices/src/java/CNCEntities/BuyCardRequest.java</file>
-            <file>file:/E:/M_Works/UDIC/C_Project/C_Other/CNCAPI/java/CNCServices/src/java/CNCEntities/TopupRequest.java</file>
-            <file>file:/E:/M_Works/UDIC/C_Project/C_Other/CNCAPI/java/CNCServices/src/java/CNCEntities/ResponseRequestCheckCount.java</file>
-            <file>file:/E:/M_Works/UDIC/C_Project/C_Other/CNCAPI/java/CNCServices/src/java/CNCEntities/ResponseRequest.java</file>
-            <file>file:/E:/M_Works/UDIC/C_Project/C_Other/CNCAPI/java/CNCServices/src/java/CNCEntities/BaseEntity.java</file>
-            <file>file:/E:/M_Works/UDIC/C_Project/C_Other/CNCAPI/java/CNCServices/web/WEB-INF/web.xml</file>
-            <file>file:/E:/M_Works/UDIC/C_Project/C_Other/CNCAPI/java/CNCServices/src/java/CNCEntities/CheckCountResponse.java</file>
-            <file>file:/E:/M_Works/UDIC/C_Project/C_Other/CNCAPI/java/CNCServices/src/java/CNCUtil/Util.java</file>
-            <file>file:/E:/M_Works/UDIC/C_Project/C_Other/CNCAPI/java/CNCServices/src/java/CNCEntities/GetCardRequest.java</file>
-            <file>file:/E:/M_Works/UDIC/C_Project/C_Other/CNCAPI/java/CNCServices/src/java/CNCEntities/ResponseTopup.java</file>
-            <file>file:/E:/M_Works/UDIC/C_Project/C_Other/CNCAPI/java/CNCServices/src/java/CNCEntities/CheckCountRequest.java</file>
-            <file>file:/E:/M_Works/UDIC/C_Project/C_Other/CNCAPI/java/CNCServices/src/java/CNCServicesServlet/CNCServices.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

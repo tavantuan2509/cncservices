@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="BuyCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="agentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuyCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuyCardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="agentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Topup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="agentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TopupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TopupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckTranTopup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="agentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckTranTopupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckTranTopupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="BuyCardSoapIn">
+    <wsdl:part name="parameters" element="tns:BuyCard" />
+  </wsdl:message>
+  <wsdl:message name="BuyCardSoapOut">
+    <wsdl:part name="parameters" element="tns:BuyCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCard" />
+  </wsdl:message>
+  <wsdl:message name="GetCardSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="TopupSoapIn">
+    <wsdl:part name="parameters" element="tns:Topup" />
+  </wsdl:message>
+  <wsdl:message name="TopupSoapOut">
+    <wsdl:part name="parameters" element="tns:TopupResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckTranTopupSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckTranTopup" />
+  </wsdl:message>
+  <wsdl:message name="CheckTranTopupSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckTranTopupResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SoftpinSoap">
+    <wsdl:operation name="BuyCard">
+      <wsdl:input message="tns:BuyCardSoapIn" />
+      <wsdl:output message="tns:BuyCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCard">
+      <wsdl:input message="tns:GetCardSoapIn" />
+      <wsdl:output message="tns:GetCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Topup">
+      <wsdl:input message="tns:TopupSoapIn" />
+      <wsdl:output message="tns:TopupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTranTopup">
+      <wsdl:input message="tns:CheckTranTopupSoapIn" />
+      <wsdl:output message="tns:CheckTranTopupSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SoftpinSoap" type="tns:SoftpinSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BuyCard">
+      <soap:operation soapAction="http://tempuri.org/BuyCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCard">
+      <soap:operation soapAction="http://tempuri.org/GetCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Topup">
+      <soap:operation soapAction="http://tempuri.org/Topup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTranTopup">
+      <soap:operation soapAction="http://tempuri.org/CheckTranTopup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SoftpinSoap12" type="tns:SoftpinSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="BuyCard">
+      <soap12:operation soapAction="http://tempuri.org/BuyCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCard">
+      <soap12:operation soapAction="http://tempuri.org/GetCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Topup">
+      <soap12:operation soapAction="http://tempuri.org/Topup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTranTopup">
+      <soap12:operation soapAction="http://tempuri.org/CheckTranTopup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Softpin">
+    <wsdl:port name="SoftpinSoap" binding="tns:SoftpinSoap">
+      <soap:address location="http://charging.pay365.vn/Softpin.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SoftpinSoap12" binding="tns:SoftpinSoap12">
+      <soap12:address location="http://charging.pay365.vn/Softpin.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
